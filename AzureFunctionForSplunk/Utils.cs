@@ -96,7 +96,7 @@ namespace AzureFunctionForSplunk
         public static bool ValidateMyCert(object sender, X509Certificate cert, X509Chain chain, SslPolicyErrors sslErr)
         {
             // if user has not configured a cert, anything goes
-            if (splunkCertThumbprint == "")
+            if (string.IsNullOrEmpty(splunkCertThumbprint))
                 return true;
 
             // if user has configured a cert, must match
@@ -126,7 +126,7 @@ namespace AzureFunctionForSplunk
             {
                 newClientContent.Append(item);
             }
-            var client = new SingleHttpClientInstance();
+
             try
             {
                 HttpRequestMessage req = new HttpRequestMessage(HttpMethod.Post, splunkAddress);

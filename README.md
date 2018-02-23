@@ -48,6 +48,8 @@ Each resource to be monitored must have a diagnostics profile created for it. Th
 
 [Automatically enable Diagnostic Settings at resource creation using a Resource Manager template](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-enable-diagnostic-logs-using-template)
 
+Another alternative is to use a combination of built-in and custom [ARM policies](https://docs.microsoft.com/en-us/azure/azure-policy/azure-policy-introduction) to enable diagnostics when a particular resource type is created.  This will allow you to manage this at a subscription level rather than in code for each resource group.  Ther is an example of this (currently in preview) for Network Security Groups.  Likewise, you may want to create an audit policy for resources that don't have diagnostics enabled as shown [here](https://docs.microsoft.com/en-us/azure/azure-policy/scripts/audit-diag-setting).
+
 ### Event hubs
 
 As mentioned, logs and metrics are sent through event hubs. Event hubs are created automatically by the Azure resource providers that need to write the information, so at the outset all you need to do is create the Event Hub Namespace. Here's how to do this in the portal:

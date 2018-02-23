@@ -259,3 +259,4 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/AzureFunctionForSplunk/Properties/PublishProfiles/splunk-poc-03-function - Web Deploy.pubxml
